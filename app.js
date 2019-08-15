@@ -8,19 +8,19 @@ $( function (){
     longitude:'127.757899'
     }
   
-    $.getJSON(
-      url, //リクエストURL
-      param,       //送信データ
-      function(data, status) {
-        console.log(data);
-        for(let item of data.rest){
-          $('#list').append('<li>'+ item.name + '</li>')
-      }
-          $('input[name=search]').on('keyup', function(){
-          $('#list').append('<li>'+ name + '</li>')
-        })
-      }
-    );
+    // $.getJSON(
+    //   url, //リクエストURL
+    //   param,       //送信データ
+    //   function(data, status) {
+    //     console.log(data);
+    //     for(let item of data.rest){
+    //       $('#list').append('<li>'+ item.name + '</li>')
+    //   }
+    //       $('input[name=search]').on('keyup', function(){
+    //       $('#list').append('<li>'+ name + '</li>')
+    //     })
+    //   }
+    // );
   });
   
   function showResult( result ) {
@@ -38,7 +38,7 @@ $( function (){
       longitude:'127.757899',
       freeword:''
   }
-  
+
     $("#submit").on("click", function () {
       param.freeword = $("category").val()
       $.getJSON( url, param, function( result ) {
@@ -46,6 +46,6 @@ $( function (){
       });
     });
   });
-  
+
   
   
