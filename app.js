@@ -2,14 +2,16 @@ $( function () {
 
 
   function showResult( result ) {
+    
+
     for ( let i in result.rest) {
 
-      let resultCard ='<div class= col-lg-4 ><div class= card><div class= card-body ><div class= text-center ><img src=' + result.rest[i].image_url.shop_image1 + '></div><div class= text-center> <h5 class= card-title>' + result.rest[i].name + '</h5></div>'+'<ul class= pl-0><li class= list-group>' + result.rest[i].opentime + '</li><li class= list-group>' + result.rest[i].address + '</li><li class= list-group>' + result.rest[i].tel + '</li></ul></div></div></div></div></div>'
+      // let imageTag = result.rest[i].image_url.shop_image1
 
-      
-      $('img').attr('class', 'img-fluid');
 
-      $('.card-group').prepend(resultCard);
+      let resultCard ='<div class= col-lg-4 ><div class= card><div class= card-body ><div class= text-center ><img src=' + result.rest[i].image_url.shop_image1 + '></div><div class= text-center> <div class=mt-3><h5 class= card-title>' + result.rest[i].name + '</h5></div></div>'+'<ul class= pl-0><li class= list-group>' + result.rest[i].opentime + '</li><li class= list-group>' + result.rest[i].address + '</li><li class= list-group>' + result.rest[i].tel + '</li></ul></div></div></div></div>'
+
+      $('.row').prepend(resultCard);
 
     }
 
@@ -20,14 +22,17 @@ $( function () {
     range:'3',
     latitude:'26.316166',
     longitude:'127.757899',
-    // hit_per_page: '100',
+    hit_per_page: '100',
     freeword:''
   }
 
   $('#submit').on('click', function () {
+    
     param.freeword = $('#search').val()
     $.getJSON( url, param, function( result ) {
       showResult( result )
+
     });
+
   });
 });
