@@ -1,4 +1,7 @@
 $( function () {
+  // let timeIcon = '<i class="far fa-clock"></i>'
+  // let addressIcon = '<i class="fas fa-map-marker-alt"></i>'
+  // let telIcon = '<i class="fas fa-voicemail"></i>'
 
 
   function showResult( result ) {
@@ -7,7 +10,7 @@ $( function () {
 
       let src = '';
       if(result.rest[i].image_url.shop_image1 !== ''){
-        console.log(result.rest[i].image_url.shop_image1);
+        // console.log(result.rest[i].image_url.shop_image1);
         src = result.rest[i].image_url.shop_image1;
       }else{
         src = "noimage.jpg";
