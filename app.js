@@ -1,13 +1,18 @@
 $( function () {
 
+
   function showResult( result ) {
     for ( let i in result.rest) {
 
-      let card ='<div class= card >' + '<div class= card-body >' +'<div class= card-img > '+'<img src=' + result.rest[i].image_url.shop_image1 + ' ></div>'+'<h5 class= card-title>' + result.rest[i].name + '</h5>'+'<ul class= card-list><li>' + result.rest[i].opentime + '</li>'+'<li>' + result.rest[i].address + '</li>'+'<li>' + result.rest[i].tel + '</li></ul>'
+      let resultCard ='<div class= col-lg-4 ><div class= card><div class= card-body ><div class= text-center ><img src=' + result.rest[i].image_url.shop_image1 + '></div><div class= text-center> <h5 class= card-title>' + result.rest[i].name + '</h5></div>'+'<ul class= pl-0><li class= list-group>' + result.rest[i].opentime + '</li><li class= list-group>' + result.rest[i].address + '</li><li class= list-group>' + result.rest[i].tel + '</li></ul></div></div></div></div></div>'
 
-      $('.result').prepend(card);
+      
+      $('img').attr('class', 'img-fluid');
+
+      $('.card-group').prepend(resultCard);
 
     }
+
   }
   let url = 'https://api.gnavi.co.jp/RestSearchAPI/v3/'
   let param = {
